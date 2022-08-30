@@ -66,3 +66,4 @@ for epoch in range(config.num_epochs):
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
 
 print(model)
+torch.save(model.state_dict(), '/')
