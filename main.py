@@ -64,3 +64,6 @@ for epoch in range(config.num_epochs):
         optimizer.step()
 
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
+       
+print(model)
+
