@@ -3,7 +3,7 @@ train_data_dir = "my_data/train"
 train_coco = "my_data/my_train_coco.json"
 
 # Batch size
-train_batch_size = 1
+train_batch_size = 20
 
 # Params for dataloader
 train_shuffle_dl = True
