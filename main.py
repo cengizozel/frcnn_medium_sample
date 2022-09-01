@@ -25,14 +25,13 @@ data_loader = torch.utils.data.DataLoader(
 
 
 # select device (whether GPU or CPU)
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device(0)
 
 # DataLoader is iterable over Dataset
 for imgs, annotations in data_loader:
     imgs = list(img.to(device) for img in imgs)
     annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
     print(annotations)
-
 
 model = get_model_instance_segmentation(config.num_classes)
 
@@ -66,4 +65,4 @@ for epoch in range(config.num_epochs):
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
 
 print(model)
-torch.save(model.state_dict(), '/')
+torch.save(model.state_dict(), "tuned_hand.pth")
