@@ -26,7 +26,7 @@ class myOwnDataset(torch.utils.data.Dataset):
         # path for input image
         path = coco.loadImgs(img_id)[0]["file_name"]
         # open the input image
-        img = Image.open(os.path.join(self.root, path))
+        img = Image.open(os.path.join(self.root, path)).convert("RGB")
         # number of objects in the image
         num_objs = len(coco_annotation)
 
