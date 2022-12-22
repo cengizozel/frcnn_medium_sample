@@ -6,7 +6,7 @@ from utils import (
     get_transform,
     myOwnDataset,
 )
-
+ 
 print("Torch version:", torch.__version__)
 
 # create own Dataset
